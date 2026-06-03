@@ -1,0 +1,2 @@
+Optional MP3 slot: sfx_correct_ting.mp3
+Game sekarang sudah ada fallback audio tanpa fail ini.

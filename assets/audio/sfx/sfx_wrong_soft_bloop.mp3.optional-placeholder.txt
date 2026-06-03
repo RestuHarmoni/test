@@ -1,0 +1,2 @@
+Optional MP3 slot: sfx_wrong_soft_bloop.mp3
+Game sekarang sudah ada fallback audio tanpa fail ini.

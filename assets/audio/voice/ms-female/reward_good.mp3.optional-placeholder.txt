@@ -1,0 +1,2 @@
+Optional MP3 slot: reward_good.mp3
+Game sekarang sudah ada fallback audio tanpa fail ini.
