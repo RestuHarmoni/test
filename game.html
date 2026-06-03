@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Game Play 01 - Bintang Ceria Full Audio</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffd93d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Bintang Ceria">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800;900&display=swap');
     :root{--sky:#8ee7ff;--sky2:#e8fbff;--navy:#17324d;--yellow:#ffd93d;--pink:#ff7ac8;--mint:#98f35f;--blue:#3abef9;--shadow:0 14px 35px rgba(23,50,77,.18)}
@@ -132,5 +138,14 @@
     if('speechSynthesis' in window) speechSynthesis.onvoiceschanged=()=>{};
     loadBank();
   </script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").catch(() => {});
+      });
+    }
+  </script>
+
 </body>
 </html>
