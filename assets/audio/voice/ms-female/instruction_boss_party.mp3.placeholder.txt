@@ -1,0 +1,6 @@
+PLACEHOLDER AUDIO
+
+Nama fail sebenar: instruction_boss_party.mp3
+Tujuan/Text: Tangkap semua yang betul.
+
+Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

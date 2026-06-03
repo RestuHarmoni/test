@@ -1,0 +1,6 @@
+PLACEHOLDER AUDIO
+
+Nama fail sebenar: instruction_star.mp3
+Tujuan/Text: Tekan bintang yang jatuh dari langit.
+
+Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

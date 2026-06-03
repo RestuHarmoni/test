@@ -1,0 +1,6 @@
+PLACEHOLDER AUDIO
+
+Nama fail sebenar: sfx_reward_chime.mp3
+Tujuan/Text: Ganjaran tamat game
+
+Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

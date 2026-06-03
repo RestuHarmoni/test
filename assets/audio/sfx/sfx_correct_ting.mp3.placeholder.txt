@@ -1,0 +1,6 @@
+PLACEHOLDER AUDIO
+
+Nama fail sebenar: sfx_correct_ting.mp3
+Tujuan/Text: Bunyi betul pendek ceria
+
+Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

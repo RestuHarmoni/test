@@ -1,0 +1,6 @@
+PLACEHOLDER AUDIO
+
+Nama fail sebenar: sfx_pop.mp3
+Tujuan/Text: Pop apabila objek ditekan
+
+Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

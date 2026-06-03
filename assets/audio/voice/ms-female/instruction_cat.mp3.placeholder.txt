@@ -1,0 +1,6 @@
+PLACEHOLDER AUDIO
+
+Nama fail sebenar: instruction_cat.mp3
+Tujuan/Text: Pilih kucing.
+
+Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

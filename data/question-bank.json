@@ -1,0 +1,415 @@
+{
+  "version": "1.0.0",
+  "project": "Bintang Ceria Adventure",
+  "ageRange": "3-5",
+  "settings": {
+    "defaultGameDurationSeconds": 60,
+    "nearEndTickStartSeconds": 10,
+    "relaxedModeDurationSeconds": 90,
+    "enableBackgroundMusic": true,
+    "enableVoiceInstruction": true,
+    "enableSfx": true
+  },
+  "audio": {
+    "voicePath": "assets/audio/voice/ms-female/",
+    "sfxPath": "assets/audio/sfx/",
+    "musicPath": "assets/audio/music/",
+    "backgroundMusic": "bg_happy_kids_loop.mp3",
+    "sfx": {
+      "correct": "sfx_correct_ting.mp3",
+      "wrong": "sfx_wrong_soft_bloop.mp3",
+      "pop": "sfx_pop.mp3",
+      "reward": "sfx_reward_chime.mp3",
+      "tick": "sfx_tick_soft.mp3"
+    },
+    "voice": {
+      "welcome": "welcome.mp3",
+      "gameStart": "game_start.mp3",
+      "almostFinish": "almost_finish.mp3",
+      "timeUp": "time_up.mp3",
+      "rewardGood": "reward_good.mp3",
+      "nextGame": "next_game.mp3"
+    }
+  },
+  "games": [
+    {
+      "id": "game01_star_catch",
+      "order": 1,
+      "title": "Tangkap Bintang",
+      "icon": "⭐",
+      "type": "tap_falling",
+      "durationSeconds": 60,
+      "instructionText": "Tekan bintang yang jatuh",
+      "instructionAudio": "instruction_star.mp3",
+      "targetRule": "tap_all",
+      "items": [
+        {
+          "id": "star_yellow",
+          "label": "",
+          "icon": "⭐",
+          "isCorrect": true
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      }
+    },
+    {
+      "id": "game02_balloon_pop",
+      "order": 2,
+      "title": "Pecahkan Belon",
+      "icon": "🎈",
+      "type": "tap_falling",
+      "durationSeconds": 60,
+      "instructionText": "Pecahkan belon yang bergerak",
+      "instructionAudio": "instruction_balloon.mp3",
+      "targetRule": "tap_all",
+      "items": [
+        {
+          "id": "balloon_red",
+          "label": "",
+          "icon": "🎈",
+          "isCorrect": true
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      }
+    },
+    {
+      "id": "game03_color_red",
+      "order": 3,
+      "title": "Cari Warna Merah",
+      "icon": "🌈",
+      "type": "choose_target",
+      "durationSeconds": 60,
+      "instructionText": "Tangkap warna merah",
+      "instructionAudio": "instruction_red.mp3",
+      "targetRule": "only_correct",
+      "items": [
+        {
+          "id": "red",
+          "label": "",
+          "icon": "❤️",
+          "isCorrect": true
+        },
+        {
+          "id": "blue",
+          "label": "",
+          "icon": "💙",
+          "isCorrect": false
+        },
+        {
+          "id": "green",
+          "label": "",
+          "icon": "💚",
+          "isCorrect": false
+        },
+        {
+          "id": "yellow",
+          "label": "",
+          "icon": "💛",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 4,
+        "twoStarsScore": 8,
+        "threeStarsScore": 14
+      }
+    },
+    {
+      "id": "game04_number_3",
+      "order": 4,
+      "title": "Cari Nombor 3",
+      "icon": "🔢",
+      "type": "choose_target",
+      "durationSeconds": 60,
+      "instructionText": "Tangkap nombor tiga",
+      "instructionAudio": "instruction_number3.mp3",
+      "targetRule": "only_correct",
+      "items": [
+        {
+          "id": "num_1",
+          "label": "1",
+          "icon": "⭐",
+          "isCorrect": false
+        },
+        {
+          "id": "num_2",
+          "label": "2",
+          "icon": "⭐",
+          "isCorrect": false
+        },
+        {
+          "id": "num_3",
+          "label": "3",
+          "icon": "⭐",
+          "isCorrect": true
+        },
+        {
+          "id": "num_4",
+          "label": "4",
+          "icon": "⭐",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 4,
+        "twoStarsScore": 8,
+        "threeStarsScore": 14
+      }
+    },
+    {
+      "id": "game05_letter_a",
+      "order": 5,
+      "title": "Cari Huruf A",
+      "icon": "🔤",
+      "type": "choose_target",
+      "durationSeconds": 60,
+      "instructionText": "Tangkap huruf A",
+      "instructionAudio": "instruction_letter_a.mp3",
+      "targetRule": "only_correct",
+      "items": [
+        {
+          "id": "letter_a",
+          "label": "A",
+          "icon": "⭐",
+          "isCorrect": true
+        },
+        {
+          "id": "letter_b",
+          "label": "B",
+          "icon": "⭐",
+          "isCorrect": false
+        },
+        {
+          "id": "letter_c",
+          "label": "C",
+          "icon": "⭐",
+          "isCorrect": false
+        },
+        {
+          "id": "letter_d",
+          "label": "D",
+          "icon": "⭐",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 4,
+        "twoStarsScore": 8,
+        "threeStarsScore": 14
+      }
+    },
+    {
+      "id": "game06_animal_cat",
+      "order": 6,
+      "title": "Cari Haiwan",
+      "icon": "🐱",
+      "type": "choose_target",
+      "durationSeconds": 60,
+      "instructionText": "Pilih kucing",
+      "instructionAudio": "instruction_cat.mp3",
+      "targetRule": "only_correct",
+      "items": [
+        {
+          "id": "cat",
+          "label": "",
+          "icon": "🐱",
+          "isCorrect": true
+        },
+        {
+          "id": "dog",
+          "label": "",
+          "icon": "🐶",
+          "isCorrect": false
+        },
+        {
+          "id": "cow",
+          "label": "",
+          "icon": "🐮",
+          "isCorrect": false
+        },
+        {
+          "id": "duck",
+          "label": "",
+          "icon": "🐥",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 4,
+        "twoStarsScore": 8,
+        "threeStarsScore": 14
+      }
+    },
+    {
+      "id": "game07_fruit_apple",
+      "order": 7,
+      "title": "Tangkap Buah",
+      "icon": "🍎",
+      "type": "choose_target",
+      "durationSeconds": 60,
+      "instructionText": "Tangkap epal",
+      "instructionAudio": "instruction_apple.mp3",
+      "targetRule": "only_correct",
+      "items": [
+        {
+          "id": "apple",
+          "label": "",
+          "icon": "🍎",
+          "isCorrect": true
+        },
+        {
+          "id": "banana",
+          "label": "",
+          "icon": "🍌",
+          "isCorrect": false
+        },
+        {
+          "id": "grape",
+          "label": "",
+          "icon": "🍇",
+          "isCorrect": false
+        },
+        {
+          "id": "orange",
+          "label": "",
+          "icon": "🍊",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 4,
+        "twoStarsScore": 8,
+        "threeStarsScore": 14
+      }
+    },
+    {
+      "id": "game08_rocket_race",
+      "order": 8,
+      "title": "Lumba Bintang",
+      "icon": "🚀",
+      "type": "tap_falling",
+      "durationSeconds": 60,
+      "instructionText": "Tekan roket untuk laju",
+      "instructionAudio": "instruction_rocket.mp3",
+      "targetRule": "tap_all",
+      "items": [
+        {
+          "id": "rocket",
+          "label": "",
+          "icon": "🚀",
+          "isCorrect": true
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      }
+    },
+    {
+      "id": "game09_music_star",
+      "order": 9,
+      "title": "Bintang Muzik",
+      "icon": "🎵",
+      "type": "tap_falling",
+      "durationSeconds": 60,
+      "instructionText": "Tekan bintang muzik",
+      "instructionAudio": "instruction_music_star.mp3",
+      "targetRule": "tap_all",
+      "items": [
+        {
+          "id": "music_star",
+          "label": "",
+          "icon": "🌟",
+          "isCorrect": true
+        },
+        {
+          "id": "note",
+          "label": "",
+          "icon": "🎵",
+          "isCorrect": true
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      }
+    },
+    {
+      "id": "game10_boss_party",
+      "order": 10,
+      "title": "Boss Star Party",
+      "icon": "👑",
+      "type": "mixed",
+      "durationSeconds": 75,
+      "instructionText": "Tangkap semua yang betul",
+      "instructionAudio": "instruction_boss_party.mp3",
+      "targetRule": "mixed_correct_only",
+      "items": [
+        {
+          "id": "star",
+          "label": "",
+          "icon": "⭐",
+          "isCorrect": true
+        },
+        {
+          "id": "balloon",
+          "label": "",
+          "icon": "🎈",
+          "isCorrect": true
+        },
+        {
+          "id": "apple",
+          "label": "",
+          "icon": "🍎",
+          "isCorrect": true
+        },
+        {
+          "id": "wrong_number",
+          "label": "2",
+          "icon": "⭐",
+          "isCorrect": false
+        },
+        {
+          "id": "wrong_animal",
+          "label": "",
+          "icon": "🐶",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 6,
+        "twoStarsScore": 12,
+        "threeStarsScore": 20
+      }
+    }
+  ],
+  "adminPanelSchema": {
+    "editableFields": [
+      "games[].title",
+      "games[].instructionText",
+      "games[].instructionAudio",
+      "games[].durationSeconds",
+      "games[].items[].label",
+      "games[].items[].icon",
+      "games[].items[].isCorrect",
+      "audio.backgroundMusic",
+      "audio.sfx",
+      "audio.voice"
+    ],
+    "uploadFolders": {
+      "voice": "assets/audio/voice/ms-female/",
+      "sfx": "assets/audio/sfx/",
+      "music": "assets/audio/music/"
+    }
+  }
+}

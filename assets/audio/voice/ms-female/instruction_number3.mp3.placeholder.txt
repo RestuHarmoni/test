@@ -1,0 +1,6 @@
+PLACEHOLDER AUDIO
+
+Nama fail sebenar: instruction_number3.mp3
+Tujuan/Text: Tangkap nombor tiga.
+
+Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

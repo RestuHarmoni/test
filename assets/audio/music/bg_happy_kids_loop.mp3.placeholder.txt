@@ -1,0 +1,6 @@
+PLACEHOLDER AUDIO
+
+Nama fail sebenar: bg_happy_kids_loop.mp3
+Tujuan/Text: Muzik latar ceria loop, volume rendah, 60-90 saat
+
+Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

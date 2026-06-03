@@ -1,0 +1,6 @@
+PLACEHOLDER AUDIO
+
+Nama fail sebenar: game_start.mp3
+Tujuan/Text: Bersedia. Kita mula sekarang.
+
+Padam fail .placeholder.txt ini selepas letak MP3 sebenar.
