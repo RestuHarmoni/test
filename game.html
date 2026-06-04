@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Produk Game Kanak-Kanak - Play Games & Trace Learn</title>
+  <title>Produk Game Kanak-Kanak - Menu A B C D + Navigation</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffd93d">
   <meta name="mobile-web-app-capable" content="yes">
@@ -38,12 +38,33 @@
     .bottom-dock{position:absolute;left:14px;right:14px;bottom:calc(env(safe-area-inset-bottom) + 16px);z-index:22;display:flex;gap:10px;align-items:center;justify-content:center}
     .big-btn{border:0;border-radius:24px;padding:14px 18px;min-height:58px;background:linear-gradient(135deg,var(--yellow),#ffb72e);color:#17324d;font-size:18px;font-weight:900;box-shadow:0 12px 0 #d99212,var(--shadow);cursor:pointer}.big-btn:active{transform:translateY(5px);box-shadow:0 7px 0 #d99212,var(--shadow)}
     .small-btn{border:0;border-radius:20px;padding:12px 14px;min-height:52px;background:#fff;color:#17324d;font-size:16px;font-weight:900;box-shadow:var(--shadow);cursor:pointer}
+    .admin-link{position:absolute;right:12px;bottom:108px;z-index:45;text-decoration:none;border-radius:999px;background:rgba(255,255,255,.82);border:3px solid rgba(255,255,255,.95);box-shadow:var(--shadow);color:#17324d;font-size:14px;font-weight:900;padding:10px 13px}
+    .admin-link:active{transform:scale(.96)}
+
+    .game-nav{position:absolute;top:calc(env(safe-area-inset-top) + 170px);left:12px;right:12px;z-index:24;display:none;grid-template-columns:1fr 1fr 1fr;gap:8px}
+    .game-nav.show{display:grid}
+    .nav-game-btn{border:0;border-radius:18px;min-height:48px;padding:9px 8px;background:rgba(255,255,255,.92);box-shadow:var(--shadow);color:#17324d;font-size:14px;font-weight:900;font-family:inherit;cursor:pointer}
+    .nav-game-btn:active{transform:scale(.95)}
+    @media(max-width:420px){.game-nav{top:calc(env(safe-area-inset-top) + 162px);gap:6px}.nav-game-btn{font-size:12px;min-height:44px;padding:7px 5px}.instruction-card{font-size:19px}}
+    .empty-note{font-size:17px;font-weight:900;background:#fff;border-radius:22px;padding:14px;margin:12px 0;color:#b45309}
     .overlay{position:absolute;inset:0;z-index:80;background:rgba(31,66,93,.25);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:18px}.overlay.show{display:flex}
-    .modal{width:min(430px,94vw);border-radius:36px;background:linear-gradient(180deg,#fff,#fff7d9);border:6px solid #fff;box-shadow:0 30px 70px rgba(0,0,0,.2);padding:24px 18px;text-align:center;animation:modalIn .25s ease-out}@keyframes modalIn{from{transform:translateY(20px) scale(.92);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+    .modal{width:min(460px,94vw);max-height:92dvh;overflow-y:auto;border-radius:36px;background:linear-gradient(180deg,#fff,#fff7d9);border:6px solid #fff;box-shadow:0 30px 70px rgba(0,0,0,.2);padding:22px 18px;text-align:center;animation:modalIn .25s ease-out;scrollbar-width:thin}@keyframes modalIn{from{transform:translateY(20px) scale(.92);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
     .modal h1{margin:4px 0 8px;font-size:34px;line-height:1.05}.modal p{margin:8px auto 16px;font-size:19px;font-weight:800;max-width:320px}.star-row{display:flex;justify-content:center;gap:8px;font-size:48px;margin:10px 0 14px;animation:bounceStars .7s ease-in-out infinite alternate}@keyframes bounceStars{from{transform:translateY(0)}to{transform:translateY(-7px)}}
     .level-map{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0 18px}.level-node{height:48px;border-radius:16px;display:grid;place-items:center;background:#eaf7ff;border:3px solid rgba(58,190,249,.3);font-size:20px;font-weight:900}.level-node.active{background:linear-gradient(135deg,#ffd93d,#ff7ac8);color:#fff;transform:scale(1.06)}.level-node.done{background:linear-gradient(135deg,#98f35f,#3abef9);color:#fff}
 
-    .choice-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}.choice-card{width:100%;border:0;border-radius:28px;padding:18px 14px;background:linear-gradient(135deg,#fff,#e8fbff);box-shadow:0 10px 0 rgba(58,190,249,.28),var(--shadow);font-family:inherit;color:var(--navy);text-align:left;cursor:pointer}.choice-card strong{display:block;font-size:25px;line-height:1.05}.choice-card span{display:block;font-size:15px;font-weight:900;margin-top:5px;color:#365a78}.choice-card small{display:inline-flex;margin-top:10px;padding:7px 11px;border-radius:999px;background:#ffd93d;font-weight:900}.choice-card.trace{background:linear-gradient(135deg,#fff7d9,#fff)}.choice-card.printable{background:linear-gradient(135deg,#f5fff0,#fff)}.choice-card:active{transform:translateY(4px);box-shadow:0 6px 0 rgba(58,190,249,.22),var(--shadow)}.back-choice{margin-top:10px;background:#fff}.hidden{display:none!important}.section-badge{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:#17324d;color:white;padding:7px 12px;font-size:13px;font-weight:900;margin-bottom:8px}
+    .choice-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}.choice-card{width:100%;border:0;border-radius:26px;padding:15px 14px;background:linear-gradient(135deg,#fff,#e8fbff);box-shadow:0 10px 0 rgba(58,190,249,.28),var(--shadow);font-family:inherit;color:var(--navy);text-align:left;cursor:pointer}.choice-card strong{display:block;font-size:23px;line-height:1.05}.choice-card span{display:block;font-size:15px;font-weight:900;margin-top:5px;color:#365a78}.choice-card small{display:inline-flex;margin-top:10px;padding:7px 11px;border-radius:999px;background:#ffd93d;font-weight:900}.choice-card.trace{background:linear-gradient(135deg,#fff7d9,#fff)}.choice-card.printable{background:linear-gradient(135deg,#f5fff0,#fff)}.choice-card.car{background:linear-gradient(135deg,#eaf4ff,#fff)}.choice-card:active{transform:translateY(4px);box-shadow:0 6px 0 rgba(58,190,249,.22),var(--shadow)}.back-choice{margin-top:10px;background:#fff}.hidden{display:none!important}.section-badge{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:#17324d;color:white;padding:7px 12px;font-size:13px;font-weight:900;margin-bottom:8px}
+
+
+    .car-stage{position:absolute;left:50%;top:52%;translate:-50% -50%;width:min(92vw,520px);height:min(62vh,460px);border-radius:34px;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow);background:linear-gradient(180deg,#87ceff 0 18%,#56c271 18% 30%,#565f6b 30% 100%)}
+    .car-road{position:absolute;left:50%;top:28%;bottom:0;width:58%;translate:-50% 0;background:#3f4752;border-left:8px solid #fff;border-right:8px solid #fff;overflow:hidden}
+    .car-road::before{content:"";position:absolute;left:50%;top:-60px;width:10px;height:140%;translate:-50% 0;background:repeating-linear-gradient(180deg,#ffd93d 0 28px,transparent 28px 58px);animation:roadMove .7s linear infinite}
+    @keyframes roadMove{to{translate:-50% 58px}}
+    .kid-car{position:absolute;bottom:24px;left:50%;translate:-50% 0;width:54px;height:82px;border-radius:22px 22px 14px 14px;background:linear-gradient(180deg,#ff7ac8,#ff428d);border:4px solid #fff;box-shadow:0 10px 18px rgba(0,0,0,.25);z-index:3;transition:left .12s ease}
+    .kid-car::before{content:"🚗";position:absolute;inset:0;display:grid;place-items:center;font-size:42px}
+    .road-item{position:absolute;top:-68px;left:50%;translate:-50% 0;width:54px;height:54px;border-radius:18px;display:grid;place-items:center;font-size:34px;background:#fff;border:4px solid rgba(23,50,77,.15);box-shadow:0 10px 18px rgba(0,0,0,.18);animation:fallRoad 2.6s linear forwards;z-index:2}
+    @keyframes fallRoad{to{top:110%}}
+    .car-controls{position:absolute;left:50%;bottom:18px;translate:-50% 0;display:flex;gap:18px;z-index:25}
+    .drive-btn{width:96px;height:70px;border:0;border-radius:26px;background:#fff;box-shadow:0 8px 0 rgba(23,50,77,.16),var(--shadow);font-size:38px;font-weight:900;cursor:pointer}.drive-btn:active{transform:translateY(5px);box-shadow:0 3px 0 rgba(23,50,77,.12),var(--shadow)}
 
     .trace-stage{position:absolute;left:50%;top:52%;translate:-50% -50%;width:min(86vw,420px);height:min(58vh,420px);border-radius:36px;background:rgba(255,255,255,.82);border:6px solid rgba(255,255,255,.96);box-shadow:var(--shadow);display:grid;place-items:center;overflow:hidden;touch-action:none}
     .trace-guide{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(150px,42vw,285px);font-weight:900;color:rgba(23,50,77,.12);line-height:1;font-family:'Fredoka','Noto Sans Arabic','Arial',sans-serif;user-select:none;pointer-events:none}
@@ -64,17 +85,24 @@
       <div class="pill timer-pill" id="timerPill">⏰ <span id="timeText">60</span></div>
       <button class="icon-btn" id="soundBtn" aria-label="Sound">🔊</button>
     </section>
+    <a class="admin-link" href="admin/control-panel.html">⚙️ Control</a>
     <section class="instruction-card" id="instructionText">Sedia...</section>
+    <section class="game-nav" id="gameNav">
+      <button class="nav-game-btn" id="backCategoryBtn">⬅️ Back</button>
+      <button class="nav-game-btn" id="homeMenuBtn">🏠 Menu</button>
+      <button class="nav-game-btn" id="restartGameBtn">🔄 Restart</button>
+    </section>
     <section class="game-area" id="gameArea"></section>
     <section class="bottom-dock"><button class="small-btn" id="pauseBtn">⏸️ Pause</button><button class="big-btn" id="startBtn">▶️ Mula Main</button></section>
     <section class="overlay show" id="startOverlay">
       <div class="modal" id="choicePanel">
         <h1>🌟 Pilih Jenis Game</h1>
-        <p>Pilih bahagian A, B atau C dahulu.</p>
+        <p>Pilih bahagian A, B, C atau D. Control Panel boleh aktif/nyahaktifkan menu dan game.</p><div class="section-badge">Versi 1.2.9 • Back / Home / Restart</div>
         <div class="choice-grid">
           <button class="choice-card" id="playGamesChoice"><strong>🎮 A. Play Games</strong><span>10 game interaktif: bintang, belon, warna, nombor, ABC dan objek.</span><small>10 GAME</small></button>
           <button class="choice-card trace" id="traceLearnChoice"><strong>✏️ B. Trace & Learn</strong><span>10 game lakaran: nombor, ABC dan Jawi guna jari/touch.</span><small>10 GAME</small></button>
           <button class="choice-card printable" id="worksheetChoice"><strong>📄 C. Worksheet Games</strong><span>10 aktiviti latihan: warna, bentuk, padanan, susun dan pilih jawapan.</span><small>10 GAME</small></button>
+          <button class="choice-card car" id="carChoice"><strong>🚗 D. Drive Control</strong><span>10 game kawal kereta kiri kanan. Ambil item betul dan elak item salah.</span><small>10 GAME</small></button>
         </div>
       </div>
       <div class="modal hidden" id="levelPanel">
@@ -91,14 +119,46 @@
   <script>
     const BANK_PATH='data/question-bank.json';
     const $=id=>document.getElementById(id);
-    const gameArea=$('gameArea'), scoreText=$('scoreText'), timeText=$('timeText'), timerPill=$('timerPill'), levelTitle=$('levelTitle'), instructionText=$('instructionText'), soundBtn=$('soundBtn'), startBtn=$('startBtn'), playNowBtn=$('playNowBtn'), pauseBtn=$('pauseBtn'), rewardOverlay=$('rewardOverlay'), startOverlay=$('startOverlay'), nextBtn=$('nextBtn'), rewardTitle=$('rewardTitle'), rewardText=$('rewardText'), rewardStars=$('rewardStars'), rewardLevelMap=$('rewardLevelMap'), startLevelMap=$('startLevelMap'), gameShell=$('gameShell'), choicePanel=$('choicePanel'), levelPanel=$('levelPanel'), playGamesChoice=$('playGamesChoice'), traceLearnChoice=$('traceLearnChoice'), worksheetChoice=$('worksheetChoice'), backChoiceBtn=$('backChoiceBtn'), sectionTitle=$('sectionTitle'), sectionDesc=$('sectionDesc'), selectedSectionBadge=$('selectedSectionBadge');
-    let bank,allGames=[],games=[],selectedMode='',currentGame=0,score=0,totalScore=0,timeLeft=60,running=false,paused=false,spawnTimer=null,countdownTimer=null,audioCtx=null,soundOn=true,musicTimer=null,encourageTimer=null,lastAlmost=false,traceDone=false,traceCanvas=null,traceCtx=null,traceProgress=0,traceDrawing=false;
+    const gameArea=$('gameArea'), scoreText=$('scoreText'), timeText=$('timeText'), timerPill=$('timerPill'), levelTitle=$('levelTitle'), instructionText=$('instructionText'), soundBtn=$('soundBtn'), startBtn=$('startBtn'), playNowBtn=$('playNowBtn'), pauseBtn=$('pauseBtn'), rewardOverlay=$('rewardOverlay'), startOverlay=$('startOverlay'), nextBtn=$('nextBtn'), rewardTitle=$('rewardTitle'), rewardText=$('rewardText'), rewardStars=$('rewardStars'), rewardLevelMap=$('rewardLevelMap'), startLevelMap=$('startLevelMap'), gameShell=$('gameShell'), choicePanel=$('choicePanel'), levelPanel=$('levelPanel'), playGamesChoice=$('playGamesChoice'), traceLearnChoice=$('traceLearnChoice'), worksheetChoice=$('worksheetChoice'), carChoice=$('carChoice'), backChoiceBtn=$('backChoiceBtn'), sectionTitle=$('sectionTitle'), sectionDesc=$('sectionDesc'), selectedSectionBadge=$('selectedSectionBadge'), gameNav=$('gameNav'), backCategoryBtn=$('backCategoryBtn'), homeMenuBtn=$('homeMenuBtn'), restartGameBtn=$('restartGameBtn');
+    let bank,allGames=[],games=[],selectedMode='',currentGame=0,score=0,totalScore=0,timeLeft=60,running=false,paused=false,spawnTimer=null,countdownTimer=null,audioCtx=null,soundOn=true,musicTimer=null,encourageTimer=null,lastAlmost=false,traceDone=false,traceCanvas=null,traceCtx=null,traceProgress=0,traceDrawing=false,carX=50,carMoveDir=0,carMoveTimer=null,carSpawnTimer=null;
 
+    const CONTROL_KEY='STANDBY_GAME_CONTROL_V1';
+    function defaultControl(){
+      return {
+        categories:{play:true,trace:true,worksheet:true,car:true},
+        labels:{play:'🎮 A. Play Games',trace:'✏️ B. Trace & Learn',worksheet:'📄 C. Worksheet Games',car:'🚗 D. Drive Control'},
+        hiddenGames:{}
+      };
+    }
+    function getControl(){
+      try{ return Object.assign(defaultControl(), JSON.parse(localStorage.getItem(CONTROL_KEY)||'{}')); }catch(e){ return defaultControl(); }
+    }
+    function isGameAllowed(g,control){ return !control.hiddenGames?.[g.id]; }
+    function updateChoiceVisibility(){
+      const c=getControl();
+      playGamesChoice.classList.toggle('hidden', c.categories?.play===false);
+      traceLearnChoice.classList.toggle('hidden', c.categories?.trace===false);
+      worksheetChoice.classList.toggle('hidden', c.categories?.worksheet===false);
+      carChoice.classList.toggle('hidden', c.categories?.car===false);
+      playGamesChoice.querySelector('strong').textContent=c.labels?.play||'🎮 A. Play Games';
+      traceLearnChoice.querySelector('strong').textContent=c.labels?.trace||'✏️ B. Trace & Learn';
+      worksheetChoice.querySelector('strong').textContent=c.labels?.worksheet||'📄 C. Worksheet Games';
+      carChoice.querySelector('strong').textContent=c.labels?.car||'🚗 D. Drive Control';
+      const visible=[playGamesChoice,traceLearnChoice,worksheetChoice,carChoice].some(btn=>!btn.classList.contains('hidden'));
+      let note=document.getElementById('emptyControlNote');
+      if(!visible){
+        if(!note){ note=document.createElement('div'); note.id='emptyControlNote'; note.className='empty-note'; note.textContent='Semua kategori sedang OFF. Buka ⚙️ Control untuk aktifkan semula.'; choicePanel.querySelector('.choice-grid').after(note); }
+      }else if(note){ note.remove(); }
+    }
     async function loadBank(){
-      const res=await fetch(BANK_PATH,{cache:'no-store'}); bank=await res.json(); allGames=bank.games||[]; games=[];
-      levelTitle.textContent='Pilih Jenis Game'; instructionText.textContent='Pilih A Play Games, B Trace & Learn atau C Worksheet Games'; timeText.textContent='60';
+      const res=await fetch(BANK_PATH,{cache:'no-store'}); bank=await res.json();
+      const control=getControl();
+      allGames=(bank.games||[]).filter(g=>isGameAllowed(g,control)); games=[];
+      updateChoiceVisibility();
+      levelTitle.textContent='Pilih Jenis Game'; instructionText.textContent='Pilih A Play Games, B Trace & Learn, C Worksheet Games atau D Drive Control'; timeText.textContent='60';
     }
     function selectMode(mode){
+      showGameNav(false);
       selectedMode=mode; currentGame=0; totalScore=0;
       if(mode==='play'){
         games=allGames.filter(g=>g.mode!=='trace' && g.mode!=='worksheet').slice(0,10);
@@ -112,22 +172,29 @@
         sectionTitle.textContent='✏️ Trace & Learn';
         sectionDesc.textContent='10 game lakaran nombor, ABC dan Jawi.';
         playNowBtn.textContent='✏️ Mula Trace & Learn';
-      }else{
+      }else if(mode==='worksheet'){
         games=allGames.filter(g=>g.mode==='worksheet').slice(0,10);
         selectedSectionBadge.textContent='📄 C. Worksheet Games';
         sectionTitle.textContent='📄 Worksheet Games';
         sectionDesc.textContent='10 aktiviti latihan seperti worksheet interaktif.';
         playNowBtn.textContent='📄 Mula Worksheet Games';
+      }else{
+        games=allGames.filter(g=>g.mode==='car').slice(0,10);
+        selectedSectionBadge.textContent='🚗 D. Drive Control';
+        sectionTitle.textContent='🚗 Drive Control';
+        sectionDesc.textContent='10 game kawal kereta kiri kanan. Ambil item betul dan elak item salah.';
+        playNowBtn.textContent='🚗 Mula Drive Control';
       }
       choicePanel.classList.add('hidden'); levelPanel.classList.remove('hidden');
       if(games.length){ levelTitle.textContent=games[0].title; instructionText.textContent=games[0].instructionText; timeText.textContent=games[0].durationSeconds||60; }
       buildMap(startLevelMap);
     }
     function showChoice(){
+      showGameNav(false);
       running=false; paused=false; clearGame(); stopMusic(); clearInterval(encourageTimer);
       startOverlay.classList.add('show'); rewardOverlay.classList.remove('show');
-      choicePanel.classList.remove('hidden'); levelPanel.classList.add('hidden'); selectedMode=''; currentGame=0; totalScore=0;
-      levelTitle.textContent='Pilih Jenis Game'; instructionText.textContent='Pilih A Play Games, B Trace & Learn atau C Worksheet Games'; scoreText.textContent='0'; timeText.textContent='60';
+      choicePanel.classList.remove('hidden'); levelPanel.classList.add('hidden'); selectedMode=''; currentGame=0; totalScore=0; updateChoiceVisibility();
+      levelTitle.textContent='Pilih Jenis Game'; instructionText.textContent='Pilih A Play Games, B Trace & Learn, C Worksheet Games atau D Drive Control'; scoreText.textContent='0'; timeText.textContent='60';
     }
     function initAudio(){ if(audioCtx) return; audioCtx=new (window.AudioContext||window.webkitAudioContext)(); }
     function tone(freq=600,duration=.13,type='sine',gain=.12){
@@ -162,7 +229,7 @@
       const r=document.createElement('div'); r.className='touch-ring'; r.style.left=(x-9)+'px'; r.style.top=(y-9)+'px'; document.body.appendChild(r); setTimeout(()=>r.remove(),500);
     }
     gameShell.addEventListener('pointerdown',e=>{touchEffect(e.clientX,e.clientY); if(running) sfxTap();},{passive:true});
-    function buildMap(el){el.innerHTML='';games.forEach((g,i)=>{const n=document.createElement('div');n.className='level-node';n.title=(g.category?g.category+' - ':'')+g.title;if(i<currentGame)n.classList.add('done');if(i===currentGame)n.classList.add('active');n.textContent=i<currentGame?'✅':(g.category==='Nombor'?'🔢':g.category==='ABC'?'🔤':g.category==='Jawi'?'ج':i+1);el.appendChild(n)})}
+    function buildMap(el){el.innerHTML='';games.forEach((g,i)=>{const n=document.createElement('div');n.className='level-node';n.title=(g.category?g.category+' - ':'')+g.title;if(i<currentGame)n.classList.add('done');if(i===currentGame)n.classList.add('active');n.textContent=i<currentGame?'✅':(g.category==='Nombor'?'🔢':g.category==='ABC'?'🔤':g.category==='Jawi'?'ج':g.mode==='car'?'🚗':i+1);el.appendChild(n)})}
     const random=(a,b)=>Math.random()*(b-a)+a;
     function itemData(){const items=games[currentGame].items||[{icon:'⭐',label:'',isCorrect:true}];return items[Math.floor(Math.random()*items.length)]}
     function spawnItem(){
@@ -193,17 +260,66 @@
     }
     function showPop(x,y,t){const p=document.createElement('div');p.className='pop';p.textContent=t;p.style.left=(x-44)+'px';p.style.top=(y-44)+'px';document.body.appendChild(p);setTimeout(()=>p.remove(),650)}
     function confetti(x,y){['#ffd93d','#ff7ac8','#98f35f','#3abef9','#b99cff'].forEach((c,i)=>{for(let j=0;j<3;j++){const e=document.createElement('div');e.className='confetti';e.style.left=x+'px';e.style.top=y+'px';e.style.background=c;e.style.setProperty('--x',random(-95,95)+'px');e.style.setProperty('--y',random(-95,55)+'px');document.body.appendChild(e);setTimeout(()=>e.remove(),800)}})}
+
+
+    function showGameNav(show){ gameNav.classList.toggle('show', !!show); }
+    function backToCategory(){
+      running=false; paused=false; clearGame(); stopMusic(); clearInterval(encourageTimer);
+      rewardOverlay.classList.remove('show'); startOverlay.classList.add('show');
+      choicePanel.classList.add('hidden'); levelPanel.classList.remove('hidden');
+      showGameNav(false); buildMap(startLevelMap);
+      if(games[currentGame]){ levelTitle.textContent=games[currentGame].title; instructionText.textContent=games[currentGame].instructionText; timeText.textContent=games[currentGame].durationSeconds||60; }
+    }
+    function homeMenu(){ showChoice(); showGameNav(false); }
+    function restartCurrentGame(){ if(!selectedMode || !games.length){ showChoice(); return; } startGame(); }
+
+    function setupCarGame(g){
+      gameArea.innerHTML='<div class="car-stage"><div class="car-road" id="carRoad"><div class="kid-car" id="kidCar"></div></div></div><div class="car-controls"><button class="drive-btn" id="leftDrive">⬅️</button><button class="drive-btn" id="rightDrive">➡️</button></div>';
+      carX=50; updateCar();
+      const left=$('leftDrive'), right=$('rightDrive');
+      const press=(dir)=>{carMoveDir=dir; moveCar(dir*10);};
+      const release=()=>{carMoveDir=0;};
+      left.addEventListener('pointerdown',e=>{e.preventDefault();press(-1)}); right.addEventListener('pointerdown',e=>{e.preventDefault();press(1)});
+      ['pointerup','pointercancel','pointerleave'].forEach(ev=>{left.addEventListener(ev,release);right.addEventListener(ev,release)});
+      document.onkeydown=(e)=>{if(!running||paused)return;if(e.key==='ArrowLeft')moveCar(-10);if(e.key==='ArrowRight')moveCar(10)};
+      carMoveTimer=setInterval(()=>{if(running&&!paused&&carMoveDir)moveCar(carMoveDir*4)},70);
+      carSpawnTimer=setInterval(()=>spawnRoadItem(g),780);
+      spawnRoadItem(g); spawnRoadItem(g);
+    }
+    function updateCar(){const car=$('kidCar'); if(car) car.style.left=carX+'%';}
+    function moveCar(delta){carX=Math.max(18,Math.min(82,carX+delta));updateCar();sfxTap();}
+    function spawnRoadItem(g){
+      if(!running||paused)return;
+      const road=$('carRoad'); if(!road)return;
+      const items=g.items||[{icon:'⭐',isCorrect:true},{icon:'🚧',isCorrect:false}];
+      const data=items[Math.floor(Math.random()*items.length)];
+      const el=document.createElement('div'); el.className='road-item'; el.textContent=data.icon||'⭐'; el.dataset.correct=data.isCorrect?'1':'0';
+      el.style.left=(25+Math.random()*50)+'%'; el.style.animationDuration=(2.0+Math.random()*1.1)+'s'; road.appendChild(el);
+      const hit=setInterval(()=>{
+        if(!running||paused||!el.isConnected)return;
+        const car=$('kidCar'); if(!car)return;
+        const a=el.getBoundingClientRect(), b=car.getBoundingClientRect();
+        const collide=!(a.right<b.left||a.left>b.right||a.bottom<b.top||a.top>b.bottom);
+        if(collide){
+          clearInterval(hit); el.remove();
+          if(el.dataset.correct==='1'){ score+=2; totalScore+=2; scoreText.textContent=score; sfxCorrect(); popText('Bagus! +2',b.left+b.width/2,b.top); }
+          else { score=Math.max(0,score-1); scoreText.textContent=score; sfxWrong(); popText('Elak halangan!',b.left+b.width/2,b.top); }
+        }
+      },45);
+      setTimeout(()=>{clearInterval(hit);el.remove()},3600);
+    }
     function startGame(){
       if(!games.length){ showChoice(); return; }
-      initAudio(); startOverlay.classList.remove('show'); rewardOverlay.classList.remove('show'); clearGame(); lastAlmost=false;
+      initAudio(); startOverlay.classList.remove('show'); rewardOverlay.classList.remove('show'); showGameNav(true); clearGame(); lastAlmost=false;
       const g=games[currentGame]; score=0; timeLeft=g.durationSeconds||60; running=true; paused=false; scoreText.textContent=0; timeText.textContent=timeLeft; timerPill.classList.remove('warning'); pauseBtn.textContent='⏸️ Pause'; levelTitle.textContent=g.title; instructionText.textContent=g.instructionText;
       startMusic(); speak(bank.audio.voice.welcomeText); setTimeout(()=>speak(g.instructionVoiceText),1900);
       clearInterval(encourageTimer); encourageTimer=setInterval(()=>{ if(running&&!paused&&timeLeft>12) speak(['Bagus adik.','Hebat.','Pandainya adik.','Teruskan.'][Math.floor(Math.random()*4)],1.0,1.22) },15000);
-      if(g.mode==='trace'){ setupTraceGame(g); } else { spawnTimer=setInterval(spawnItem,currentGame>=7?780:950); }
+      if(g.mode==='trace'){ setupTraceGame(g); } else if(g.mode==='car'){ setupCarGame(g); } else { spawnTimer=setInterval(spawnItem,currentGame>=7?780:950); }
       countdownTimer=setInterval(()=>{if(!running||paused)return;timeLeft--;timeText.textContent=timeLeft;if(timeLeft<=10){timerPill.classList.add('warning');sfxTick();if(!lastAlmost){lastAlmost=true;speak(bank.audio.voice.almostFinishText)}}if(timeLeft<=0)endGame()},1000);
     }
-    function clearGame(){gameArea.innerHTML='';clearInterval(spawnTimer);clearInterval(countdownTimer);traceCanvas=null;traceCtx=null;traceDrawing=false;timerPill.classList.remove('warning')}
+    function clearGame(){gameArea.innerHTML='';clearInterval(spawnTimer);clearInterval(countdownTimer);traceCanvas=null;traceCtx=null;traceDrawing=false,carX=50,carMoveDir=0,carMoveTimer=null,carSpawnTimer=null;timerPill.classList.remove('warning');clearInterval(carMoveTimer);clearInterval(carSpawnTimer);carMoveDir=0}
     function endGame(){
+      showGameNav(false);
       running=false;paused=false;clearGame();stopMusic();clearInterval(encourageTimer);sfxReward();speak(bank.audio.voice.rewardGoodText);
       const g=games[currentGame], r=g.reward||{passScore:4,twoStarsScore:8,threeStarsScore:14}; const stars=score>=r.threeStarsScore?3:score>=r.twoStarsScore?2:score>=r.passScore?1:0;
       rewardStars.textContent=stars===3?'⭐⭐⭐':stars===2?'⭐⭐☆':stars===1?'⭐☆☆':'🌟'; rewardTitle.textContent=currentGame===games.length-1?'👑 Tamat Semua!':'🎉 Syabas!'; rewardText.textContent=currentGame===games.length-1?`Hebat! Jumlah bintang awak: ${totalScore} ⭐`:`Awak dapat ${score} bintang. Jom sambung game seterusnya!`; buildMap(rewardLevelMap); nextBtn.textContent=currentGame===games.length-1?'🔁 Main Semula':'➡️ Game Seterusnya'; rewardOverlay.classList.add('show')
@@ -214,9 +330,13 @@
     playGamesChoice.addEventListener('click',()=>selectMode('play'));
     traceLearnChoice.addEventListener('click',()=>selectMode('trace'));
     worksheetChoice.addEventListener('click',()=>selectMode('worksheet'));
+    carChoice.addEventListener('click',()=>selectMode('car'));
     backChoiceBtn.addEventListener('click',showChoice);
     startBtn.addEventListener('click',()=>{ if(!selectedMode) showChoice(); else startGame(); });
-    playNowBtn.addEventListener('click',startGame);
+    playNowBtn.addEventListener('click',()=>{ if(!games.length){ location.href='admin/control-panel.html'; return; } startGame(); });
+    backCategoryBtn.addEventListener('click',backToCategory);
+    homeMenuBtn.addEventListener('click',homeMenu);
+    restartGameBtn.addEventListener('click',restartCurrentGame);
     nextBtn.addEventListener('click',nextGame);
     if('speechSynthesis' in window) speechSynthesis.onvoiceschanged=()=>{};
     loadBank();

@@ -1,10 +1,11 @@
-/* Standby Product Service Worker - Play Games + Trace & Learn + Worksheet Games Menu */
-const CACHE_VERSION = "standby-product-v1.2.5-three-menu";
+/* Standby Product Service Worker - Controlled A/B/C/D Car Menu */
+const CACHE_VERSION = "standby-product-v1.2.9-controlled-abcd-car-menu";
 const APP_SHELL = [
   "./",
   "./game.html",
   "./manifest.json",
   "./data/question-bank.json",
+  "./admin/control-panel.html",
   "./assets/icons/icon.svg",
   "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png"

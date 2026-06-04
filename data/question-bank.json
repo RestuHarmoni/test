@@ -1,6 +1,6 @@
 {
-  "version": "1.2.5",
-  "project": "Standby Product - A Play Games + B Trace Learn + C Worksheet Games",
+  "version": "1.2.8",
+  "project": "Standby Product - Controlled A B C Menu",
   "ageRange": "3-5",
   "settings": {
     "defaultGameDurationSeconds": 60,
@@ -867,6 +867,386 @@
       },
       "category": "Worksheet Games",
       "mode": "worksheet"
+    },
+    {
+      "id": "game31_car_stars",
+      "order": 31,
+      "title": "Drive Bintang",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil bintang, elak kon.",
+      "instructionVoiceText": "Pandu kereta ke kiri dan kanan. Ambil bintang.",
+      "items": [
+        {
+          "icon": "⭐",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🪨",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🛑",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
+    },
+    {
+      "id": "game32_car_numbers",
+      "order": 32,
+      "title": "Drive Nombor 1",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil nombor satu, elak halangan.",
+      "instructionVoiceText": "Pandu kereta dan ambil nombor satu.",
+      "items": [
+        {
+          "icon": "1",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "2",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "3",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
+    },
+    {
+      "id": "game33_car_abc",
+      "order": 33,
+      "title": "Drive Huruf A",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil huruf A, elak huruf lain.",
+      "instructionVoiceText": "Pandu kereta dan ambil huruf A.",
+      "items": [
+        {
+          "icon": "A",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "B",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "C",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
+    },
+    {
+      "id": "game34_car_jawi",
+      "order": 34,
+      "title": "Drive Alif",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil Alif, elak halangan.",
+      "instructionVoiceText": "Pandu kereta dan ambil huruf Alif.",
+      "items": [
+        {
+          "icon": "ا",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "ب",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "ت",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
+    },
+    {
+      "id": "game35_car_colors",
+      "order": 35,
+      "title": "Drive Warna Merah",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil warna merah.",
+      "instructionVoiceText": "Pandu kereta dan ambil bulatan merah.",
+      "items": [
+        {
+          "icon": "🔴",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🔵",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🟡",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
+    },
+    {
+      "id": "game36_car_shapes",
+      "order": 36,
+      "title": "Drive Bentuk Bulat",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil bentuk bulat.",
+      "instructionVoiceText": "Pandu kereta dan ambil bentuk bulat.",
+      "items": [
+        {
+          "icon": "⭕",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🔺",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "⬛",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
+    },
+    {
+      "id": "game37_car_fruits",
+      "order": 37,
+      "title": "Drive Buah",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil buah epal.",
+      "instructionVoiceText": "Pandu kereta dan ambil epal.",
+      "items": [
+        {
+          "icon": "🍎",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🥕",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🧸",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
+    },
+    {
+      "id": "game38_car_animals",
+      "order": 38,
+      "title": "Drive Haiwan",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil kucing.",
+      "instructionVoiceText": "Pandu kereta dan ambil kucing.",
+      "items": [
+        {
+          "icon": "🐱",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🐶",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🐭",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
+    },
+    {
+      "id": "game39_car_rewards",
+      "order": 39,
+      "title": "Drive Hadiah",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil hadiah.",
+      "instructionVoiceText": "Pandu kereta dan ambil hadiah.",
+      "items": [
+        {
+          "icon": "🎁",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🪨",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🛑",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
+    },
+    {
+      "id": "game40_car_mixed",
+      "order": 40,
+      "title": "Drive Campuran",
+      "icon": "🚗",
+      "durationSeconds": 60,
+      "instructionText": "Ambil trofi.",
+      "instructionVoiceText": "Pandu kereta dan ambil trofi.",
+      "items": [
+        {
+          "icon": "🏆",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "💣",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🪨",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚧",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 8,
+        "twoStarsScore": 16,
+        "threeStarsScore": 26
+      },
+      "category": "Drive Control",
+      "mode": "car"
     }
   ],
   "menuStructure": {
@@ -880,5 +1260,15 @@
       "filter": "mode == trace",
       "total": 10
     }
+  },
+  "controlPanel": {
+    "localStorageKey": "STANDBY_GAME_CONTROL_V1",
+    "features": [
+      "Enable/disable category A/B/C",
+      "Enable/disable individual games",
+      "Rename menu labels",
+      "Reset settings"
+    ],
+    "latest": "v1.2.8 control car game D"
   }
 }

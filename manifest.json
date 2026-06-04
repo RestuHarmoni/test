@@ -1,8 +1,8 @@
 {
-  "name": "Produk Game Kanak-Kanak",
-  "short_name": "Kids Games",
-  "description": "Standby produk game kanak-kanak dengan pilihan Play Games, Trace & Learn dan Worksheet Games.",
-  "start_url": "./game.html",
+  "name": "Kids Games - A B C D Control",
+  "short_name": "Kids ABCD",
+  "description": "Standby product with Play, Trace, Worksheet and Drive Control Navigation games.",
+  "start_url": "./game.html?v=1.2.7",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
