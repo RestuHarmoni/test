@@ -1,6 +1,6 @@
 {
-  "version": "1.2.2",
-  "project": "Bintang Ceria Adventure + Tracing Pack",
+  "version": "1.2.4",
+  "project": "Standby Product - Play Games + Trace & Learn Split Menu",
   "ageRange": "3-5",
   "settings": {
     "defaultGameDurationSeconds": 60,
@@ -538,5 +538,17 @@
         "threeStarsScore": 100
       }
     }
-  ]
+  ],
+  "menuStructure": {
+    "A_Play_Games": {
+      "description": "10 game interaktif tanpa lakaran",
+      "filter": "mode != trace",
+      "total": 10
+    },
+    "B_Trace_And_Learn": {
+      "description": "10 game lakaran nombor, ABC dan Jawi",
+      "filter": "mode == trace",
+      "total": 10
+    }
+  }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "Bintang Ceria Adventure",
-  "short_name": "Bintang Ceria",
-  "description": "Game kanak-kanak 3-5 tahun dengan suara, muzik, animasi dan touch effect.",
+  "name": "Produk Game Kanak-Kanak",
+  "short_name": "Kids Games",
+  "description": "Standby produk game kanak-kanak dengan pilihan Play Games dan Trace & Learn.",
   "start_url": "./game.html",
   "scope": "./",
   "display": "standalone",

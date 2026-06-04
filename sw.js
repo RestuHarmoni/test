@@ -1,5 +1,5 @@
-/* Bintang Ceria Adventure Service Worker */
-const CACHE_VERSION = "bintang-ceria-v1.2.2-tracing-pack";
+/* Standby Product Service Worker - Play Games + Trace & Learn Split Menu */
+const CACHE_VERSION = "standby-product-v1.2.4-split-menu";
 const APP_SHELL = [
   "./",
   "./game.html",
