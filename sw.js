@@ -1,8 +1,8 @@
 /* Bintang Ceria Adventure Service Worker */
-const CACHE_VERSION = "bintang-ceria-v1.2.0-pwa";
+const CACHE_VERSION = "bintang-ceria-v1.2.1-pwa-fix";
 const APP_SHELL = [
   "./",
-  "./game-play01.html",
+  "./game.html",
   "./manifest.json",
   "./data/question-bank.json",
   "./assets/icons/icon.svg",
@@ -56,7 +56,7 @@ self.addEventListener("fetch", (event) => {
         caches.open(CACHE_VERSION).then((cache) => cache.put(request, copy));
         return response;
       }).catch(() => {
-        if (request.mode === "navigate") return caches.match("./game-play01.html");
+        if (request.mode === "navigate") return caches.match("./game.html");
       });
     })
   );
