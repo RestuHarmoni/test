@@ -1,6 +1,6 @@
 {
-  "version": "1.2.4",
-  "project": "Standby Product - Play Games + Trace & Learn Split Menu",
+  "version": "1.2.5",
+  "project": "Standby Product - A Play Games + B Trace Learn + C Worksheet Games",
   "ageRange": "3-5",
   "settings": {
     "defaultGameDurationSeconds": 60,
@@ -537,6 +537,336 @@
         "twoStarsScore": 70,
         "threeStarsScore": 100
       }
+    },
+    {
+      "id": "game21_color_match",
+      "order": 21,
+      "title": "Padan Warna",
+      "icon": "🎨",
+      "durationSeconds": 60,
+      "instructionText": "Pilih warna merah",
+      "instructionVoiceText": "Pilih warna merah.",
+      "items": [
+        {
+          "icon": "🔴",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🟡",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🔵",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
+    },
+    {
+      "id": "game22_shape_match",
+      "order": 22,
+      "title": "Padan Bentuk",
+      "icon": "🔺",
+      "durationSeconds": 60,
+      "instructionText": "Pilih bentuk bulat",
+      "instructionVoiceText": "Pilih bentuk bulat.",
+      "items": [
+        {
+          "icon": "⚪",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🔺",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "⬛",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
+    },
+    {
+      "id": "game23_big_small",
+      "order": 23,
+      "title": "Besar atau Kecil",
+      "icon": "🐘",
+      "durationSeconds": 60,
+      "instructionText": "Pilih objek besar",
+      "instructionVoiceText": "Pilih objek besar.",
+      "items": [
+        {
+          "icon": "🐘",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🐜",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🐞",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
+    },
+    {
+      "id": "game24_left_right",
+      "order": 24,
+      "title": "Kiri dan Kanan",
+      "icon": "👉",
+      "durationSeconds": 60,
+      "instructionText": "Pilih anak panah kanan",
+      "instructionVoiceText": "Pilih anak panah kanan.",
+      "items": [
+        {
+          "icon": "➡️",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "⬅️",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "⬆️",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
+    },
+    {
+      "id": "game25_same_picture",
+      "order": 25,
+      "title": "Cari Gambar Sama",
+      "icon": "🐱",
+      "durationSeconds": 60,
+      "instructionText": "Pilih kucing yang sama",
+      "instructionVoiceText": "Pilih kucing yang sama.",
+      "items": [
+        {
+          "icon": "🐱",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🐶",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🐰",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
+    },
+    {
+      "id": "game26_odd_one",
+      "order": 26,
+      "title": "Cari Yang Berbeza",
+      "icon": "🍎",
+      "durationSeconds": 60,
+      "instructionText": "Pilih yang berbeza",
+      "instructionVoiceText": "Pilih yang berbeza.",
+      "items": [
+        {
+          "icon": "🍎",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🍎",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🍌",
+          "label": "",
+          "isCorrect": true
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
+    },
+    {
+      "id": "game27_shadow_match",
+      "order": 27,
+      "title": "Padan Bayang",
+      "icon": "🌳",
+      "durationSeconds": 60,
+      "instructionText": "Pilih pokok",
+      "instructionVoiceText": "Pilih pokok.",
+      "items": [
+        {
+          "icon": "🌳",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🏠",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🚗",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
+    },
+    {
+      "id": "game28_sort_fruit",
+      "order": 28,
+      "title": "Pilih Buah",
+      "icon": "🍓",
+      "durationSeconds": 60,
+      "instructionText": "Pilih buah strawberi",
+      "instructionVoiceText": "Pilih buah strawberi.",
+      "items": [
+        {
+          "icon": "🍓",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "🥕",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🧸",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
+    },
+    {
+      "id": "game29_emotion",
+      "order": 29,
+      "title": "Kenal Emosi",
+      "icon": "😊",
+      "durationSeconds": 60,
+      "instructionText": "Pilih muka gembira",
+      "instructionVoiceText": "Pilih muka gembira.",
+      "items": [
+        {
+          "icon": "😊",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "😢",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "😡",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
+    },
+    {
+      "id": "game30_pattern",
+      "order": 30,
+      "title": "Sambung Pola",
+      "icon": "⭐",
+      "durationSeconds": 60,
+      "instructionText": "Pilih bintang untuk sambung pola",
+      "instructionVoiceText": "Pilih bintang untuk sambung pola.",
+      "items": [
+        {
+          "icon": "⭐",
+          "label": "",
+          "isCorrect": true
+        },
+        {
+          "icon": "❤️",
+          "label": "",
+          "isCorrect": false
+        },
+        {
+          "icon": "🔵",
+          "label": "",
+          "isCorrect": false
+        }
+      ],
+      "reward": {
+        "passScore": 5,
+        "twoStarsScore": 10,
+        "threeStarsScore": 18
+      },
+      "category": "Worksheet Games",
+      "mode": "worksheet"
     }
   ],
   "menuStructure": {

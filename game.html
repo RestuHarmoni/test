@@ -43,7 +43,7 @@
     .modal h1{margin:4px 0 8px;font-size:34px;line-height:1.05}.modal p{margin:8px auto 16px;font-size:19px;font-weight:800;max-width:320px}.star-row{display:flex;justify-content:center;gap:8px;font-size:48px;margin:10px 0 14px;animation:bounceStars .7s ease-in-out infinite alternate}@keyframes bounceStars{from{transform:translateY(0)}to{transform:translateY(-7px)}}
     .level-map{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0 18px}.level-node{height:48px;border-radius:16px;display:grid;place-items:center;background:#eaf7ff;border:3px solid rgba(58,190,249,.3);font-size:20px;font-weight:900}.level-node.active{background:linear-gradient(135deg,#ffd93d,#ff7ac8);color:#fff;transform:scale(1.06)}.level-node.done{background:linear-gradient(135deg,#98f35f,#3abef9);color:#fff}
 
-    .choice-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}.choice-card{width:100%;border:0;border-radius:28px;padding:18px 14px;background:linear-gradient(135deg,#fff,#e8fbff);box-shadow:0 10px 0 rgba(58,190,249,.28),var(--shadow);font-family:inherit;color:var(--navy);text-align:left;cursor:pointer}.choice-card strong{display:block;font-size:25px;line-height:1.05}.choice-card span{display:block;font-size:15px;font-weight:900;margin-top:5px;color:#365a78}.choice-card small{display:inline-flex;margin-top:10px;padding:7px 11px;border-radius:999px;background:#ffd93d;font-weight:900}.choice-card.trace{background:linear-gradient(135deg,#fff7d9,#fff)}.choice-card:active{transform:translateY(4px);box-shadow:0 6px 0 rgba(58,190,249,.22),var(--shadow)}.back-choice{margin-top:10px;background:#fff}.hidden{display:none!important}.section-badge{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:#17324d;color:white;padding:7px 12px;font-size:13px;font-weight:900;margin-bottom:8px}
+    .choice-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}.choice-card{width:100%;border:0;border-radius:28px;padding:18px 14px;background:linear-gradient(135deg,#fff,#e8fbff);box-shadow:0 10px 0 rgba(58,190,249,.28),var(--shadow);font-family:inherit;color:var(--navy);text-align:left;cursor:pointer}.choice-card strong{display:block;font-size:25px;line-height:1.05}.choice-card span{display:block;font-size:15px;font-weight:900;margin-top:5px;color:#365a78}.choice-card small{display:inline-flex;margin-top:10px;padding:7px 11px;border-radius:999px;background:#ffd93d;font-weight:900}.choice-card.trace{background:linear-gradient(135deg,#fff7d9,#fff)}.choice-card.printable{background:linear-gradient(135deg,#f5fff0,#fff)}.choice-card:active{transform:translateY(4px);box-shadow:0 6px 0 rgba(58,190,249,.22),var(--shadow)}.back-choice{margin-top:10px;background:#fff}.hidden{display:none!important}.section-badge{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:#17324d;color:white;padding:7px 12px;font-size:13px;font-weight:900;margin-bottom:8px}
 
     .trace-stage{position:absolute;left:50%;top:52%;translate:-50% -50%;width:min(86vw,420px);height:min(58vh,420px);border-radius:36px;background:rgba(255,255,255,.82);border:6px solid rgba(255,255,255,.96);box-shadow:var(--shadow);display:grid;place-items:center;overflow:hidden;touch-action:none}
     .trace-guide{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(150px,42vw,285px);font-weight:900;color:rgba(23,50,77,.12);line-height:1;font-family:'Fredoka','Noto Sans Arabic','Arial',sans-serif;user-select:none;pointer-events:none}
@@ -70,10 +70,11 @@
     <section class="overlay show" id="startOverlay">
       <div class="modal" id="choicePanel">
         <h1>🌟 Pilih Jenis Game</h1>
-        <p>Pilih bahagian A atau B dahulu.</p>
+        <p>Pilih bahagian A, B atau C dahulu.</p>
         <div class="choice-grid">
           <button class="choice-card" id="playGamesChoice"><strong>🎮 A. Play Games</strong><span>10 game interaktif: bintang, belon, warna, nombor, ABC dan objek.</span><small>10 GAME</small></button>
           <button class="choice-card trace" id="traceLearnChoice"><strong>✏️ B. Trace & Learn</strong><span>10 game lakaran: nombor, ABC dan Jawi guna jari/touch.</span><small>10 GAME</small></button>
+          <button class="choice-card printable" id="worksheetChoice"><strong>📄 C. Worksheet Games</strong><span>10 aktiviti latihan: warna, bentuk, padanan, susun dan pilih jawapan.</span><small>10 GAME</small></button>
         </div>
       </div>
       <div class="modal hidden" id="levelPanel">
@@ -90,27 +91,33 @@
   <script>
     const BANK_PATH='data/question-bank.json';
     const $=id=>document.getElementById(id);
-    const gameArea=$('gameArea'), scoreText=$('scoreText'), timeText=$('timeText'), timerPill=$('timerPill'), levelTitle=$('levelTitle'), instructionText=$('instructionText'), soundBtn=$('soundBtn'), startBtn=$('startBtn'), playNowBtn=$('playNowBtn'), pauseBtn=$('pauseBtn'), rewardOverlay=$('rewardOverlay'), startOverlay=$('startOverlay'), nextBtn=$('nextBtn'), rewardTitle=$('rewardTitle'), rewardText=$('rewardText'), rewardStars=$('rewardStars'), rewardLevelMap=$('rewardLevelMap'), startLevelMap=$('startLevelMap'), gameShell=$('gameShell'), choicePanel=$('choicePanel'), levelPanel=$('levelPanel'), playGamesChoice=$('playGamesChoice'), traceLearnChoice=$('traceLearnChoice'), backChoiceBtn=$('backChoiceBtn'), sectionTitle=$('sectionTitle'), sectionDesc=$('sectionDesc'), selectedSectionBadge=$('selectedSectionBadge');
+    const gameArea=$('gameArea'), scoreText=$('scoreText'), timeText=$('timeText'), timerPill=$('timerPill'), levelTitle=$('levelTitle'), instructionText=$('instructionText'), soundBtn=$('soundBtn'), startBtn=$('startBtn'), playNowBtn=$('playNowBtn'), pauseBtn=$('pauseBtn'), rewardOverlay=$('rewardOverlay'), startOverlay=$('startOverlay'), nextBtn=$('nextBtn'), rewardTitle=$('rewardTitle'), rewardText=$('rewardText'), rewardStars=$('rewardStars'), rewardLevelMap=$('rewardLevelMap'), startLevelMap=$('startLevelMap'), gameShell=$('gameShell'), choicePanel=$('choicePanel'), levelPanel=$('levelPanel'), playGamesChoice=$('playGamesChoice'), traceLearnChoice=$('traceLearnChoice'), worksheetChoice=$('worksheetChoice'), backChoiceBtn=$('backChoiceBtn'), sectionTitle=$('sectionTitle'), sectionDesc=$('sectionDesc'), selectedSectionBadge=$('selectedSectionBadge');
     let bank,allGames=[],games=[],selectedMode='',currentGame=0,score=0,totalScore=0,timeLeft=60,running=false,paused=false,spawnTimer=null,countdownTimer=null,audioCtx=null,soundOn=true,musicTimer=null,encourageTimer=null,lastAlmost=false,traceDone=false,traceCanvas=null,traceCtx=null,traceProgress=0,traceDrawing=false;
 
     async function loadBank(){
       const res=await fetch(BANK_PATH,{cache:'no-store'}); bank=await res.json(); allGames=bank.games||[]; games=[];
-      levelTitle.textContent='Pilih Jenis Game'; instructionText.textContent='Pilih A Play Games atau B Trace & Learn'; timeText.textContent='60';
+      levelTitle.textContent='Pilih Jenis Game'; instructionText.textContent='Pilih A Play Games, B Trace & Learn atau C Worksheet Games'; timeText.textContent='60';
     }
     function selectMode(mode){
       selectedMode=mode; currentGame=0; totalScore=0;
       if(mode==='play'){
-        games=allGames.filter(g=>g.mode!=='trace').slice(0,10);
+        games=allGames.filter(g=>g.mode!=='trace' && g.mode!=='worksheet').slice(0,10);
         selectedSectionBadge.textContent='🎮 A. Play Games';
         sectionTitle.textContent='🎮 Play Games';
         sectionDesc.textContent='10 game interaktif. Tekan Mula untuk bermain mengikut turutan.';
         playNowBtn.textContent='▶️ Mula Play Games';
-      }else{
+      }else if(mode==='trace'){
         games=allGames.filter(g=>g.mode==='trace').slice(0,10);
         selectedSectionBadge.textContent='✏️ B. Trace & Learn';
         sectionTitle.textContent='✏️ Trace & Learn';
         sectionDesc.textContent='10 game lakaran nombor, ABC dan Jawi.';
         playNowBtn.textContent='✏️ Mula Trace & Learn';
+      }else{
+        games=allGames.filter(g=>g.mode==='worksheet').slice(0,10);
+        selectedSectionBadge.textContent='📄 C. Worksheet Games';
+        sectionTitle.textContent='📄 Worksheet Games';
+        sectionDesc.textContent='10 aktiviti latihan seperti worksheet interaktif.';
+        playNowBtn.textContent='📄 Mula Worksheet Games';
       }
       choicePanel.classList.add('hidden'); levelPanel.classList.remove('hidden');
       if(games.length){ levelTitle.textContent=games[0].title; instructionText.textContent=games[0].instructionText; timeText.textContent=games[0].durationSeconds||60; }
@@ -120,7 +127,7 @@
       running=false; paused=false; clearGame(); stopMusic(); clearInterval(encourageTimer);
       startOverlay.classList.add('show'); rewardOverlay.classList.remove('show');
       choicePanel.classList.remove('hidden'); levelPanel.classList.add('hidden'); selectedMode=''; currentGame=0; totalScore=0;
-      levelTitle.textContent='Pilih Jenis Game'; instructionText.textContent='Pilih A Play Games atau B Trace & Learn'; scoreText.textContent='0'; timeText.textContent='60';
+      levelTitle.textContent='Pilih Jenis Game'; instructionText.textContent='Pilih A Play Games, B Trace & Learn atau C Worksheet Games'; scoreText.textContent='0'; timeText.textContent='60';
     }
     function initAudio(){ if(audioCtx) return; audioCtx=new (window.AudioContext||window.webkitAudioContext)(); }
     function tone(freq=600,duration=.13,type='sine',gain=.12){
@@ -204,11 +211,12 @@
     function nextGame(){ if(currentGame>=games.length-1){currentGame=0;totalScore=0}else currentGame++; speak(bank.audio.voice.nextGameText); setTimeout(startGame,450) }
     soundBtn.addEventListener('click',()=>{soundOn=!soundOn;soundBtn.textContent=soundOn?'🔊':'🔇';if(!soundOn){stopMusic();speechSynthesis?.cancel()}else if(running)startMusic()});
     pauseBtn.addEventListener('click',()=>{if(!running)return;paused=!paused;pauseBtn.textContent=paused?'▶️ Sambung':'⏸️ Pause'});
-    startBtn.addEventListener('click',()=>{ if(games.length) startGame(); else showChoice(); });
-    playNowBtn.addEventListener('click',startGame);
     playGamesChoice.addEventListener('click',()=>selectMode('play'));
     traceLearnChoice.addEventListener('click',()=>selectMode('trace'));
+    worksheetChoice.addEventListener('click',()=>selectMode('worksheet'));
     backChoiceBtn.addEventListener('click',showChoice);
+    startBtn.addEventListener('click',()=>{ if(!selectedMode) showChoice(); else startGame(); });
+    playNowBtn.addEventListener('click',startGame);
     nextBtn.addEventListener('click',nextGame);
     if('speechSynthesis' in window) speechSynthesis.onvoiceschanged=()=>{};
     loadBank();

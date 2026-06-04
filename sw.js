@@ -1,5 +1,5 @@
-/* Standby Product Service Worker - Play Games + Trace & Learn Split Menu */
-const CACHE_VERSION = "standby-product-v1.2.4-split-menu";
+/* Standby Product Service Worker - Play Games + Trace & Learn + Worksheet Games Menu */
+const CACHE_VERSION = "standby-product-v1.2.5-three-menu";
 const APP_SHELL = [
   "./",
   "./game.html",

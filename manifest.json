@@ -1,7 +1,7 @@
 {
   "name": "Produk Game Kanak-Kanak",
   "short_name": "Kids Games",
-  "description": "Standby produk game kanak-kanak dengan pilihan Play Games dan Trace & Learn.",
+  "description": "Standby produk game kanak-kanak dengan pilihan Play Games, Trace & Learn dan Worksheet Games.",
   "start_url": "./game.html",
   "scope": "./",
   "display": "standalone",
