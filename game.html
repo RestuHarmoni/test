@@ -42,6 +42,14 @@
     .modal{width:min(430px,94vw);border-radius:36px;background:linear-gradient(180deg,#fff,#fff7d9);border:6px solid #fff;box-shadow:0 30px 70px rgba(0,0,0,.2);padding:24px 18px;text-align:center;animation:modalIn .25s ease-out}@keyframes modalIn{from{transform:translateY(20px) scale(.92);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
     .modal h1{margin:4px 0 8px;font-size:34px;line-height:1.05}.modal p{margin:8px auto 16px;font-size:19px;font-weight:800;max-width:320px}.star-row{display:flex;justify-content:center;gap:8px;font-size:48px;margin:10px 0 14px;animation:bounceStars .7s ease-in-out infinite alternate}@keyframes bounceStars{from{transform:translateY(0)}to{transform:translateY(-7px)}}
     .level-map{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0 18px}.level-node{height:48px;border-radius:16px;display:grid;place-items:center;background:#eaf7ff;border:3px solid rgba(58,190,249,.3);font-size:20px;font-weight:900}.level-node.active{background:linear-gradient(135deg,#ffd93d,#ff7ac8);color:#fff;transform:scale(1.06)}.level-node.done{background:linear-gradient(135deg,#98f35f,#3abef9);color:#fff}
+
+    .trace-stage{position:absolute;left:50%;top:52%;translate:-50% -50%;width:min(86vw,420px);height:min(58vh,420px);border-radius:36px;background:rgba(255,255,255,.82);border:6px solid rgba(255,255,255,.96);box-shadow:var(--shadow);display:grid;place-items:center;overflow:hidden;touch-action:none}
+    .trace-guide{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(150px,42vw,285px);font-weight:900;color:rgba(23,50,77,.12);line-height:1;font-family:'Fredoka','Noto Sans Arabic','Arial',sans-serif;user-select:none;pointer-events:none}
+    .trace-guide.jawi{font-family:'Noto Sans Arabic','Amiri','Arial',sans-serif;font-size:clamp(170px,48vw,310px)}
+    .trace-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+    .trace-progress{position:absolute;left:18px;right:18px;bottom:16px;height:22px;border-radius:999px;background:rgba(23,50,77,.12);overflow:hidden;border:3px solid rgba(255,255,255,.9)}
+    .trace-progress-fill{height:100%;width:0%;border-radius:999px;background:linear-gradient(90deg,var(--mint),var(--yellow),var(--pink));transition:width .15s ease}
+    .trace-tip{position:absolute;top:14px;left:14px;right:14px;text-align:center;font-size:17px;font-weight:900;background:rgba(255,255,255,.75);padding:8px 10px;border-radius:18px}
     @media(max-width:420px){.top-bar{height:62px;gap:7px}.pill{min-height:48px;padding:8px 10px;border-radius:20px}.score-pill,.timer-pill{min-width:76px;font-size:18px}.level-pill{font-size:13px}.icon-btn{width:48px;height:48px;border-radius:17px;font-size:22px}.instruction-card{top:calc(env(safe-area-inset-top) + 82px);font-size:19px;min-height:62px}.fall-item{width:70px;height:70px;font-size:58px}.fall-label{font-size:23px}.modal h1{font-size:30px}.big-btn{font-size:16px;padding:13px 15px}}
   </style>
 </head>
@@ -57,14 +65,14 @@
     <section class="instruction-card" id="instructionText">Sedia...</section>
     <section class="game-area" id="gameArea"></section>
     <section class="bottom-dock"><button class="small-btn" id="pauseBtn">⏸️ Pause</button><button class="big-btn" id="startBtn">▶️ Mula Main</button></section>
-    <section class="overlay show" id="startOverlay"><div class="modal"><h1>🌟 Bintang Ceria!</h1><p>Ada suara arahan Melayu, muzik latar, bunyi, tick hampir tamat dan touch effect.</p><div class="level-map" id="startLevelMap"></div><button class="big-btn" id="playNowBtn">▶️ Mula Game 1</button></div></section>
+    <section class="overlay show" id="startOverlay"><div class="modal"><h1>🌟 Produk Game Kanak-Kanak</h1><p>Mini games diasingkan dengan Game Lakaran Nombor, ABC dan Jawi.</p><div class="level-map" id="startLevelMap"></div><button class="big-btn" id="playNowBtn">▶️ Mula Game 1</button></div></section>
     <section class="overlay" id="rewardOverlay"><div class="modal"><h1 id="rewardTitle">Syabas!</h1><div class="star-row" id="rewardStars">⭐⭐⭐</div><p id="rewardText">Hebat!</p><div class="level-map" id="rewardLevelMap"></div><button class="big-btn" id="nextBtn">➡️ Seterusnya</button></div></section>
   </main>
   <script>
     const BANK_PATH='data/question-bank.json';
     const $=id=>document.getElementById(id);
     const gameArea=$('gameArea'), scoreText=$('scoreText'), timeText=$('timeText'), timerPill=$('timerPill'), levelTitle=$('levelTitle'), instructionText=$('instructionText'), soundBtn=$('soundBtn'), startBtn=$('startBtn'), playNowBtn=$('playNowBtn'), pauseBtn=$('pauseBtn'), rewardOverlay=$('rewardOverlay'), startOverlay=$('startOverlay'), nextBtn=$('nextBtn'), rewardTitle=$('rewardTitle'), rewardText=$('rewardText'), rewardStars=$('rewardStars'), rewardLevelMap=$('rewardLevelMap'), startLevelMap=$('startLevelMap'), gameShell=$('gameShell');
-    let bank,games=[],currentGame=0,score=0,totalScore=0,timeLeft=60,running=false,paused=false,spawnTimer=null,countdownTimer=null,audioCtx=null,soundOn=true,musicTimer=null,encourageTimer=null,lastAlmost=false;
+    let bank,games=[],currentGame=0,score=0,totalScore=0,timeLeft=60,running=false,paused=false,spawnTimer=null,countdownTimer=null,audioCtx=null,soundOn=true,musicTimer=null,encourageTimer=null,lastAlmost=false,traceDone=false,traceCanvas=null,traceCtx=null,traceProgress=0,traceDrawing=false;
 
     async function loadBank(){
       const res=await fetch(BANK_PATH,{cache:'no-store'}); bank=await res.json(); games=bank.games||[];
@@ -103,7 +111,7 @@
       const r=document.createElement('div'); r.className='touch-ring'; r.style.left=(x-9)+'px'; r.style.top=(y-9)+'px'; document.body.appendChild(r); setTimeout(()=>r.remove(),500);
     }
     gameShell.addEventListener('pointerdown',e=>{touchEffect(e.clientX,e.clientY); if(running) sfxTap();},{passive:true});
-    function buildMap(el){el.innerHTML='';games.forEach((g,i)=>{const n=document.createElement('div');n.className='level-node';if(i<currentGame)n.classList.add('done');if(i===currentGame)n.classList.add('active');n.textContent=i<currentGame?'✅':i+1;el.appendChild(n)})}
+    function buildMap(el){el.innerHTML='';games.forEach((g,i)=>{const n=document.createElement('div');n.className='level-node';n.title=(g.category?g.category+' - ':'')+g.title;if(i<currentGame)n.classList.add('done');if(i===currentGame)n.classList.add('active');n.textContent=i<currentGame?'✅':(g.category==='Nombor'?'🔢':g.category==='ABC'?'🔤':g.category==='Jawi'?'ج':i+1);el.appendChild(n)})}
     const random=(a,b)=>Math.random()*(b-a)+a;
     function itemData(){const items=games[currentGame].items||[{icon:'⭐',label:'',isCorrect:true}];return items[Math.floor(Math.random()*items.length)]}
     function spawnItem(){
@@ -115,6 +123,23 @@
       },{passive:false});
       gameArea.appendChild(btn); setTimeout(()=>btn.remove(),7600);
     }
+    
+    function setupTraceGame(g){
+      traceDone=false; traceProgress=0; score=0; scoreText.textContent='0%';
+      const stage=document.createElement('div'); stage.className='trace-stage';
+      const tip=document.createElement('div'); tip.className='trace-tip'; tip.textContent='Ikut lakaran besar dengan jari sampai penuh';
+      const guide=document.createElement('div'); guide.className='trace-guide '+(g.category==='Jawi'?'jawi':''); guide.textContent=g.traceText||'?';
+      const bar=document.createElement('div'); bar.className='trace-progress'; const fill=document.createElement('div'); fill.className='trace-progress-fill'; bar.appendChild(fill);
+      traceCanvas=document.createElement('canvas'); traceCanvas.className='trace-canvas';
+      stage.appendChild(guide); stage.appendChild(traceCanvas); stage.appendChild(tip); stage.appendChild(bar); gameArea.appendChild(stage);
+      const resize=()=>{const r=stage.getBoundingClientRect(); traceCanvas.width=Math.floor(r.width*devicePixelRatio); traceCanvas.height=Math.floor(r.height*devicePixelRatio); traceCanvas.style.width=r.width+'px'; traceCanvas.style.height=r.height+'px'; traceCtx=traceCanvas.getContext('2d'); traceCtx.scale(devicePixelRatio,devicePixelRatio); traceCtx.lineCap='round'; traceCtx.lineJoin='round'; traceCtx.lineWidth=22; traceCtx.strokeStyle='rgba(255,122,200,.92)'};
+      resize();
+      const point=e=>{const r=traceCanvas.getBoundingClientRect(); return {x:e.clientX-r.left,y:e.clientY-r.top}};
+      const addProgress=()=>{ if(traceDone) return; traceProgress=Math.min(100,traceProgress+2.2); score=Math.floor(traceProgress); scoreText.textContent=score+'%'; fill.style.width=score+'%'; if(score>=100){traceDone=true; totalScore+=100; sfxReward(); confetti(innerWidth/2,innerHeight/2); speak('Hebat. Lakaran siap.'); setTimeout(endGame,650)} };
+      traceCanvas.addEventListener('pointerdown',e=>{e.preventDefault(); traceDrawing=true; const p=point(e); traceCtx.beginPath(); traceCtx.moveTo(p.x,p.y); addProgress();}, {passive:false});
+      traceCanvas.addEventListener('pointermove',e=>{if(!traceDrawing||paused)return; e.preventDefault(); const p=point(e); traceCtx.lineTo(p.x,p.y); traceCtx.stroke(); addProgress();}, {passive:false});
+      window.addEventListener('pointerup',()=>{traceDrawing=false},{once:false});
+    }
     function showPop(x,y,t){const p=document.createElement('div');p.className='pop';p.textContent=t;p.style.left=(x-44)+'px';p.style.top=(y-44)+'px';document.body.appendChild(p);setTimeout(()=>p.remove(),650)}
     function confetti(x,y){['#ffd93d','#ff7ac8','#98f35f','#3abef9','#b99cff'].forEach((c,i)=>{for(let j=0;j<3;j++){const e=document.createElement('div');e.className='confetti';e.style.left=x+'px';e.style.top=y+'px';e.style.background=c;e.style.setProperty('--x',random(-95,95)+'px');e.style.setProperty('--y',random(-95,55)+'px');document.body.appendChild(e);setTimeout(()=>e.remove(),800)}})}
     function startGame(){
@@ -122,10 +147,10 @@
       const g=games[currentGame]; score=0; timeLeft=g.durationSeconds||60; running=true; paused=false; scoreText.textContent=0; timeText.textContent=timeLeft; timerPill.classList.remove('warning'); pauseBtn.textContent='⏸️ Pause'; levelTitle.textContent=g.title; instructionText.textContent=g.instructionText;
       startMusic(); speak(bank.audio.voice.welcomeText); setTimeout(()=>speak(g.instructionVoiceText),1900);
       clearInterval(encourageTimer); encourageTimer=setInterval(()=>{ if(running&&!paused&&timeLeft>12) speak(['Bagus adik.','Hebat.','Pandainya adik.','Teruskan.'][Math.floor(Math.random()*4)],1.0,1.22) },15000);
-      spawnTimer=setInterval(spawnItem,currentGame>=7?780:950);
+      if(g.mode==='trace'){ setupTraceGame(g); } else { spawnTimer=setInterval(spawnItem,currentGame>=7?780:950); }
       countdownTimer=setInterval(()=>{if(!running||paused)return;timeLeft--;timeText.textContent=timeLeft;if(timeLeft<=10){timerPill.classList.add('warning');sfxTick();if(!lastAlmost){lastAlmost=true;speak(bank.audio.voice.almostFinishText)}}if(timeLeft<=0)endGame()},1000);
     }
-    function clearGame(){gameArea.innerHTML='';clearInterval(spawnTimer);clearInterval(countdownTimer);timerPill.classList.remove('warning')}
+    function clearGame(){gameArea.innerHTML='';clearInterval(spawnTimer);clearInterval(countdownTimer);traceCanvas=null;traceCtx=null;traceDrawing=false;timerPill.classList.remove('warning')}
     function endGame(){
       running=false;paused=false;clearGame();stopMusic();clearInterval(encourageTimer);sfxReward();speak(bank.audio.voice.rewardGoodText);
       const g=games[currentGame], r=g.reward||{passScore:4,twoStarsScore:8,threeStarsScore:14}; const stars=score>=r.threeStarsScore?3:score>=r.twoStarsScore?2:score>=r.passScore?1:0;

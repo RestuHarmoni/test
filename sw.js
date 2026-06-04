@@ -1,5 +1,5 @@
 /* Bintang Ceria Adventure Service Worker */
-const CACHE_VERSION = "bintang-ceria-v1.2.1-pwa-fix";
+const CACHE_VERSION = "bintang-ceria-v1.2.2-tracing-pack";
 const APP_SHELL = [
   "./",
   "./game.html",
