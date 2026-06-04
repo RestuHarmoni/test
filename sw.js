@@ -1,5 +1,5 @@
 /* Standby Product Service Worker - Controlled A/B/C/D Car Menu */
-const CACHE_VERSION = "standby-product-v1.2.9-controlled-abcd-car-menu";
+const CACHE_VERSION = "standby-product-v1.3.0-drive-controls-raised";
 const APP_SHELL = [
   "./",
   "./game.html",

@@ -2,7 +2,7 @@
   "name": "Kids Games - A B C D Control",
   "short_name": "Kids ABCD",
   "description": "Standby product with Play, Trace, Worksheet and Drive Control Navigation games.",
-  "start_url": "./game.html?v=1.2.7",
+  "start_url": "./game.html?v=1.3.0",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
