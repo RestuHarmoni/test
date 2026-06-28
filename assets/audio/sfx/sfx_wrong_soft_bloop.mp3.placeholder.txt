@@ -1,6 +1,0 @@
-PLACEHOLDER AUDIO
-
-Nama fail sebenar: sfx_wrong_soft_bloop.mp3
-Tujuan/Text: Bunyi salah lembut tidak menghukum
-
-Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

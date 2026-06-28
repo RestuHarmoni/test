@@ -1,2 +1,0 @@
-Optional MP3 slot: instruction_star.mp3
-Game sekarang sudah ada fallback audio tanpa fail ini.

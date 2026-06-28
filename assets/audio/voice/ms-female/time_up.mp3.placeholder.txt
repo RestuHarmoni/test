@@ -1,6 +1,0 @@
-PLACEHOLDER AUDIO
-
-Nama fail sebenar: time_up.mp3
-Tujuan/Text: Masa sudah tamat.
-
-Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

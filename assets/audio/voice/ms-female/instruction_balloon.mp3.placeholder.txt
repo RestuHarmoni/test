@@ -1,6 +1,0 @@
-PLACEHOLDER AUDIO
-
-Nama fail sebenar: instruction_balloon.mp3
-Tujuan/Text: Pecahkan belon yang bergerak.
-
-Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

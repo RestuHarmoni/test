@@ -1,6 +1,0 @@
-PLACEHOLDER AUDIO
-
-Nama fail sebenar: instruction_apple.mp3
-Tujuan/Text: Tangkap epal.
-
-Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

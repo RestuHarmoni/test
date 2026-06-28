@@ -1,6 +1,0 @@
-PLACEHOLDER AUDIO
-
-Nama fail sebenar: sfx_tick_soft.mp3
-Tujuan/Text: Bunyi jam detik apabila hampir tamat
-
-Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

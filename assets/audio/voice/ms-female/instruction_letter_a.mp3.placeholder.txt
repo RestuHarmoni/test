@@ -1,6 +1,0 @@
-PLACEHOLDER AUDIO
-
-Nama fail sebenar: instruction_letter_a.mp3
-Tujuan/Text: Tangkap huruf A.
-
-Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

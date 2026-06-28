@@ -1,6 +1,0 @@
-PLACEHOLDER AUDIO
-
-Nama fail sebenar: instruction_rocket.mp3
-Tujuan/Text: Tekan roket untuk laju.
-
-Padam fail .placeholder.txt ini selepas letak MP3 sebenar.

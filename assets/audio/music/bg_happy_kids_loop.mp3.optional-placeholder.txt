@@ -1,2 +1,0 @@
-Optional MP3 slot: bg_happy_kids_loop.mp3
-Game sekarang sudah ada fallback audio tanpa fail ini.

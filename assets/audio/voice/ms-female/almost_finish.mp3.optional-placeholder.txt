@@ -1,2 +1,0 @@
-Optional MP3 slot: almost_finish.mp3
-Game sekarang sudah ada fallback audio tanpa fail ini.
