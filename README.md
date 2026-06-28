@@ -1,70 +1,28 @@
-# RH Digital Static Production Website
+# RH Digital Static Website
 
-Versi ini **tanpa Vite** dan boleh dibuka terus melalui `index.html`.
+Website production static tanpa Vite, tanpa React dan tanpa Node.js.
+
+## Deploy ke Cloudflare Pages
+
+1. Upload semua fail ke GitHub repository.
+2. Cloudflare Pages > Create Project > Connect GitHub.
+3. Build command: kosongkan.
+4. Output directory: `/` atau kosong.
+5. Deploy.
+
+## Supabase
+
+1. Buka Supabase SQL Editor.
+2. Jalankan `supabase/schema.sql`.
+3. Salin `assets/js/config.example.js` kepada `assets/js/config.js`.
+4. Masukkan `RH_SUPABASE_URL` dan `RH_SUPABASE_ANON_KEY`.
+5. Tambah `<script src="assets/js/config.js"></script>` sebelum `assets/js/main.js` dalam setiap halaman yang ada borang.
 
 ## Struktur
 
-```txt
-index.html
-assets/css/style.css
-assets/js/config.js
-assets/js/main.js
-images/
-logos/
-mockups/
-supabase/
-docs/
-```
-
-## Preview lokal
-
-Cara paling mudah:
-
-```bash
-python -m http.server 8080
-```
-
-Buka:
-
-```txt
-http://localhost:8080
-```
-
-Nota: boleh juga klik `index.html` terus, tetapi preview melalui local server lebih tepat untuk path `/images`, `/assets`, dan `/logos`.
-
-## Deploy ke GitHub + Cloudflare Pages
-
-1. Upload semua fail dalam folder ini ke GitHub repository.
-2. Cloudflare Pages → Create project → Connect GitHub repo.
-3. Build command: kosongkan / None.
-4. Output directory: `/` atau kosongkan jika Cloudflare benarkan.
-5. Deploy.
-
-## Supabase Lead Form
-
-1. Buat project Supabase.
-2. Buka SQL Editor.
-3. Jalankan fail:
-
-```txt
-supabase/migrations/001_initial_schema.sql
-```
-
-4. Copy Project URL dan anon public key.
-5. Edit:
-
-```txt
-assets/js/config.js
-```
-
-Isi:
-
-```js
-window.RH_CONFIG = {
-  SUPABASE_URL: 'https://your-project.supabase.co',
-  SUPABASE_ANON_KEY: 'your-anon-key',
-  WHATSAPP_NUMBER: '601112345678'
-};
-```
-
-Selepas itu form akan simpan lead ke table `public.leads`.
+- `index.html` — laman utama penuh
+- `assets/css/style.css` — styling utama
+- `assets/js/main.js` — menu, animasi, lead form
+- `assets/images/` — logo, favicon, preview
+- `supabase/schema.sql` — database + RLS policies
+- `admin/` — asas dashboard admin
