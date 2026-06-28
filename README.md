@@ -1,28 +1,23 @@
-# RH Digital Static Website
+# RH Digital Static Production Website
 
-Website production static tanpa Vite, tanpa React dan tanpa Node.js.
+Website statik tanpa Vite, dibina mengikut `RH_Digital_Master_Website_AI_Prompt.md`.
 
 ## Deploy ke Cloudflare Pages
+- Framework preset: None
+- Build command: kosong
+- Output directory: `/`
 
-1. Upload semua fail ke GitHub repository.
-2. Cloudflare Pages > Create Project > Connect GitHub.
-3. Build command: kosongkan.
-4. Output directory: `/` atau kosong.
-5. Deploy.
+## GitHub
+Upload semua fail ke repository, kemudian sambungkan repository ke Cloudflare Pages.
 
 ## Supabase
-
-1. Buka Supabase SQL Editor.
-2. Jalankan `supabase/schema.sql`.
-3. Salin `assets/js/config.example.js` kepada `assets/js/config.js`.
-4. Masukkan `RH_SUPABASE_URL` dan `RH_SUPABASE_ANON_KEY`.
-5. Tambah `<script src="assets/js/config.js"></script>` sebelum `assets/js/main.js` dalam setiap halaman yang ada borang.
+1. Run `supabase/migrations/001_schema.sql`
+2. Run `supabase/policies/rls.sql`
+3. Letakkan URL dan anon key di `supabase/config.js`
 
 ## Struktur
-
-- `index.html` — laman utama penuh
-- `assets/css/style.css` — styling utama
-- `assets/js/main.js` — menu, animasi, lead form
-- `assets/images/` — logo, favicon, preview
-- `supabase/schema.sql` — database + RLS policies
-- `admin/` — asas dashboard admin
+- `index.html` halaman utama penuh
+- `assets/css` modular CSS
+- `assets/js` interaksi UI
+- `supabase` schema, RLS dan lead form stub
+- `pages`, `src`, `docs` disediakan untuk pengembangan modular

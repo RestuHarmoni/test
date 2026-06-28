@@ -1,0 +1,1 @@
+const form=document.getElementById('leadForm');const statusEl=document.getElementById('formStatus');if(form){form.addEventListener('submit',async(e)=>{e.preventDefault();statusEl.textContent='Terima kasih. Borang diterima. Sambungkan Supabase config.js untuk simpan automatik.';form.reset();});}
