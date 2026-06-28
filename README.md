@@ -1,32 +1,70 @@
-# RH Digital Production Website
+# RH Digital Static Production Website
 
-Premium conversion-focused website for RH Digital / Restu Harmoni.
+Versi ini **tanpa Vite** dan boleh dibuka terus melalui `index.html`.
 
-## Stack
-- Vite + HTML/CSS/JavaScript ES Modules
-- Supabase for leads, content-ready database, storage policies and RLS
-- Cloudflare Pages deployment
-- GitHub source control
+## Struktur
 
-## Quick Start
-```bash
-npm install
-cp .env.example .env
-npm run dev
+```txt
+index.html
+assets/css/style.css
+assets/js/config.js
+assets/js/main.js
+images/
+logos/
+mockups/
+supabase/
+docs/
 ```
 
-## Production Build
+## Preview lokal
+
+Cara paling mudah:
+
 ```bash
-npm run build
-npm run preview
+python -m http.server 8080
 ```
 
-## Cloudflare Pages
-Build command: `npm run build`
-Output directory: `dist`
+Buka:
 
-## Supabase
-Run `supabase/migrations/001_initial_schema.sql` in Supabase SQL Editor. Add the generated Supabase URL and anon key to your environment variables.
+```txt
+http://localhost:8080
+```
 
-## Structure
-Business content lives in `src/data/siteData.js`. UI is split across components, sections, forms, utilities and styles. Supabase configuration is isolated in `src/lib/supabaseClient.js` and `/supabase`.
+Nota: boleh juga klik `index.html` terus, tetapi preview melalui local server lebih tepat untuk path `/images`, `/assets`, dan `/logos`.
+
+## Deploy ke GitHub + Cloudflare Pages
+
+1. Upload semua fail dalam folder ini ke GitHub repository.
+2. Cloudflare Pages → Create project → Connect GitHub repo.
+3. Build command: kosongkan / None.
+4. Output directory: `/` atau kosongkan jika Cloudflare benarkan.
+5. Deploy.
+
+## Supabase Lead Form
+
+1. Buat project Supabase.
+2. Buka SQL Editor.
+3. Jalankan fail:
+
+```txt
+supabase/migrations/001_initial_schema.sql
+```
+
+4. Copy Project URL dan anon public key.
+5. Edit:
+
+```txt
+assets/js/config.js
+```
+
+Isi:
+
+```js
+window.RH_CONFIG = {
+  SUPABASE_URL: 'https://your-project.supabase.co',
+  SUPABASE_ANON_KEY: 'your-anon-key',
+  WHATSAPP_NUMBER: '601112345678'
+};
+```
+
+Selepas itu form akan simpan lead ke table `public.leads`.
