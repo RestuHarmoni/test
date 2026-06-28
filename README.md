@@ -1,7 +1,32 @@
-# test
-## v1.2.2 Tracing Pack
-- Tambah 10 game lakaran baru sebagai standby produk berasingan.
-- Game sedia ada kekal dalam kategori Mini Games.
-- Game baru diasingkan kepada Nombor, ABC dan Jawi.
-- Mode lakaran menggunakan canvas touch/finger tracing.
-- Service worker cache version dibump kepada bintang-ceria-v1.2.2-tracing-pack.
+# RH Digital Production Website
+
+Premium conversion-focused website for RH Digital / Restu Harmoni.
+
+## Stack
+- Vite + HTML/CSS/JavaScript ES Modules
+- Supabase for leads, content-ready database, storage policies and RLS
+- Cloudflare Pages deployment
+- GitHub source control
+
+## Quick Start
+```bash
+npm install
+cp .env.example .env
+npm run dev
+```
+
+## Production Build
+```bash
+npm run build
+npm run preview
+```
+
+## Cloudflare Pages
+Build command: `npm run build`
+Output directory: `dist`
+
+## Supabase
+Run `supabase/migrations/001_initial_schema.sql` in Supabase SQL Editor. Add the generated Supabase URL and anon key to your environment variables.
+
+## Structure
+Business content lives in `src/data/siteData.js`. UI is split across components, sections, forms, utilities and styles. Supabase configuration is isolated in `src/lib/supabaseClient.js` and `/supabase`.
